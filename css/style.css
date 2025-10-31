@@ -134,3 +134,59 @@ footer{margin-top:1rem;color:var(--muted);text-align:center}
 
 /* Ensure focus outlines are visible for keyboard users */
 a:focus{outline:3px solid #ffd166;outline-offset:3px}
+
+/* Resume link/button styling (if used elsewhere) */
+.resume-link{
+  display:inline-block;
+  background:linear-gradient(180deg,var(--accent),var(--accent-2));
+  color:white;padding:0.6rem 0.9rem;border-radius:8px;text-decoration:none;font-weight:700;
+}
+.resume-link:focus,.resume-link:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(34,90,120,0.12)}
+
+/* PDF viewer */
+.pdf-viewer{width:100%;max-width:900px;height:600px;overflow:auto;border:1px solid #e6eef3;border-radius:8px;margin:0.5rem 0}
+.pdf-viewer iframe{width:100%;height:100%;border:0}
+
+@media (max-width:700px){
+  .pdf-viewer{height:420px}
+  .destinations{grid-template-columns:1fr}
+}
+
+/* smaller figures for profile/gallery images */
+.small-figure{max-width:260px}
+.small-figure img{width:100%;height:auto;border-radius:6px}
+
+/* gallery grid used on family/friends pages */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;align-items:start}
+.gallery-grid figure{margin:0}
+
+/* Quick links two-column layout with image */
+.quick-row{display:flex;gap:1rem;align-items:flex-start}
+.quick-links{flex:1}
+.quick-image{max-width:320px}
+.quick-image img{display:block;width:100%;height:auto;border-radius:8px}
+
+/* Two-column layout to place an image to the right of multiple stacked sections
+   (used on the homepage so the image sits to the right of Quick Links and Contact) */
+.two-col-overall{
+  display:grid;
+  grid-template-columns:1fr 320px;
+  gap:1rem;
+  align-items:start;
+}
+.left-col{min-width:0}
+.right-col{max-width:320px}
+.right-col figure{margin:0}
+.right-col img{width:100%;height:auto;border-radius:8px;display:block}
+
+@media (max-width:700px){
+  .quick-row{flex-direction:column}
+  .quick-image{max-width:100%}
+  .two-col-overall{grid-template-columns:1fr;}
+}
+
+/* remove gap after specific sections when desired */
+.no-gap{margin-bottom:0;padding-bottom:0}
+.no-gap .quick-row{margin-bottom:0}
+.no-gap h2{margin-bottom:0.4rem}
+
